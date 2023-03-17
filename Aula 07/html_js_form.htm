@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta nome="viewport" content="width=device-width, initial-scale=1">
+<title> Formulário </title>
+<script type="text/JavaScript"> 
+    function Enviar (){
+        var par = document.createElement('p');
+        var nome = document.getElementById("FormNome"); 
+        var mensagem = '';
+        if(nome.value !=""){
+            var txt =  ' Agradecemos o contato ' + nome.value + ', não deixe de voltar\n';
+            var p2 = document.createElement('p');
+            p2.textContent = txt;
+            p2.style.backgroundColor="red";
+            document.body.appendChild(p2);
+        } 
+        var mail = document.getElementById('FormEmail');
+        if (mail.value!='')
+        {
+            var txt2= 'O email informado é: '+ mail.value;
+            var p3 = document.createElement('p');
+            p3.textContent = txt2;
+            document.body.appendChild(p3);
+
+        }
+       var valores =document.getElementsByName("cVeiculo");
+       for (var i=0; i<valores.length;i++)
+       {
+
+            if (valores[i].checked)
+            {
+                mensagem = mensagem + " " + valores[i].value + ' está selecionado\n';
+            }
+            else
+            {
+                mensagem = mensagem + " " + valores[i].value + ' não está selecionado\n'; 
+            }
+
+       }
+
+       par.textContent = mensagem;
+       document.body.appendChild(par); 
+
+       //alert (mensagem);
+
+       
+    }
+
+</script>
+</head>
+<body>
+    <h1>  Exemplo de elementos de formulários </h1>
+
+<form> 
+
+    <label for="FormNome"> Nome: </label><br>
+    <input type="text" id="FormNome" name="FormNome" placeholder="Nome Sobrenome"> <br><br>
+    <label for="FormEmail">Email: </label> <br>
+    <input ype="email" name="FormEmail" id="FormEmail" placeholder="email@email.com"> <br>
+ 
+    <fieldset>
+        <legend> Selecione os meios de transporte utilizado </legend>
+        <input type="checkbox" name="cVeiculo" id="cVeiculo" value="Onibus">
+        <label for="cVeiculo" >Ônibus</label><br>
+
+        <input type="checkbox" name="cVeiculo" id="cVeiculo2" value="Trem">
+        <label for="cVeiculo" >Trem</label><br>
+
+        <input type="checkbox" name="cVeiculo" id="cVeiculo3" value="Metro">
+        <label for="cVeiculo" >Metro</label><br>
+            </fieldset><br>    
+            <input type="button" id="btnSalvar" onclick="Enviar()" value="Salvar">
+
+</form>
+</body>
+
+
+
+</html>

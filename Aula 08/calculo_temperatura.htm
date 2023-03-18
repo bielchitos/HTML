@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>
+                Calculo Temperatura
+            </title>
+            <script type="text/JavaScript">
+            // C= (F-32)/1.8
+            // C=K-273.15
+            // FÓRMULAS
+//celsius_fahrenheit = (celsius * 9/5) + 32
+//celsius_kelvin = celsius + 273.15
+
+//fahrenheit_celsius = (fahrenheit - 32) * 5/9
+//fahrenheit_kelvin = (fahrenheit - 32) * 5/9 + 273.15
+
+//kelvin_celsius = kelvin - 273.15
+//kelvin_fahrenheit = (kelvin - 273.15) * 9/5 + 32
+
+            function Converter() {
+                
+                let f = document.getElementById("formFarenheit").value;     
+                let c =(f-32)/1.8;
+                document.getElementById("formCelsius").value = c;
+                let k = (f-32)/1.8+273;
+                document.getElementById("FormKelvin").value = k;
+        
+             if(k=f) { 
+                
+                let k = document.getElementById("formKelvin")
+                let f (k - 273.15)*9/5+32.value = f
+                document.getElementById("formFarenheit").value = f
+                
+
+             }
+             }
+
+             function limpar(){
+
+                Farenheit.value = ("")
+                formFarenheit = formFarenheit.value
+                FormKelvin = FormKelvin
+                formFarenheit = formFarenheit
+             }
+
+            </script>
+    </head>
+
+    <body>
+        <h1> Exemplo página com entrada de dados e operações matemáticas</h1>
+        <form> 
+            <br>
+            <body style="background-color: antiquewhite;"></body>
+            <input type="number" id="formFarenheit" name="FormFarenheit" placeholder="Farenheit"><br><br>
+            <input type="number" name="formCelsius" id="formCelsius" placeholder="Celsius"> <br> <br>
+            <input type="number" name="FormKelvin" id="FormKelvin" placeholder="Kelvin"> <br> <br>
+            <input type="button" id="btnConverter" onclick="Converter()" valeu="Converter">
+            <input type="button" id="btnlimpar" onclick="limpar()" valeu="limpar">
+        </form>
+    </body>
+</html>

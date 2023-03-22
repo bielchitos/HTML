@@ -20,44 +20,82 @@
 //kelvin_fahrenheit = (kelvin - 273.15) * 9/5 + 32
 
             function Converter() {
-                
-                let f = document.getElementById("formFarenheit").value;     
-                let c =(f-32)/1.8;
-                document.getElementById("formCelsius").value = c;
-                let k = (f-32)/1.8+273;
-                document.getElementById("FormKelvin").value = k;
-        
-             if(k=f) { 
-                
-                let k = document.getElementById("formKelvin")
-                let f (k - 273.15)*9/5+32.value = f
-                document.getElementById("formFarenheit").value = f
-                
 
-             }
-             }
+                let f = document.getElementById("FormFarenheit").value;
+                let c = document.getElementById("FormCelsius").value;
+                let k = document.getElementById("FormKelvin").value;
 
-             function limpar(){
-
-                Farenheit.value = ("")
-                formFarenheit = formFarenheit.value
-                FormKelvin = FormKelvin
-                formFarenheit = formFarenheit
+            if (f != "") {
+               
+                c =(f-32)/1.8;
+                document.getElementById("FormCelsius").value = c;
+                k = (f-32)/1.8+273;
+                document.getElementById("FormKelvin").value = k; 
              }
+             
+            else if (c != "") {
+              f =(c*9/5)+ 32;
+               document.getElementById("FormFarenheit").value = f;
+               k = c*1+273;
+               document.getElementById("FormKelvin").value = k; 
+            }
+            if(c==""&& f==""&& k=="")
+            {
+                alert("INFORME PELO MENOS UM CAMPO!");
+                document.getElementById("FormKelvin").style.borderColor = "red";
+                document.getElementById("FormFarenheit").style.borderColor = "red";
+                document.getElementById("FormCelsius").style.borderColor = "red";
+            }
+            else if (k != "") {
+               
+               f =(k-273.15) * 9/5 +32;
+               document.getElementById("FormFarenheit").value = f;
+               c = k-273.15;
+               document.getElementById("FormCelsius").value = c; 
+            }
+                
+    }  
+        function Limpar() { 
+
+        document.getElementById("FormKelvin").value = " ";
+        document.getElementById("FormFarenheit").value = " ";
+        document.getElementById("FormCelsius").value = " ";
+            }
 
             </script>
+            <style>
+                .paragrafo{ color: deeppink;
+                        background-color: black;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 200% ;
+                }
+                h1 {color: red}
+                    p {color: green}
+                    fieldset{ 
+                        background-color: rgba(211, 194, 194, 0.096);
+
+
+                    }
+            </style>
+        
     </head>
 
     <body>
-        <h1> Exemplo página com entrada de dados e operações matemáticas</h1>
+        
         <form> 
-            <br>
-            <body style="background-color: antiquewhite;"></body>
-            <input type="number" id="formFarenheit" name="FormFarenheit" placeholder="Farenheit"><br><br>
-            <input type="number" name="formCelsius" id="formCelsius" placeholder="Celsius"> <br> <br>
-            <input type="number" name="FormKelvin" id="FormKelvin" placeholder="Kelvin"> <br> <br>
-            <input type="button" id="btnConverter" onclick="Converter()" valeu="Converter">
-            <input type="button" id="btnlimpar" onclick="limpar()" valeu="limpar">
+            <br>  <fieldset>
+                <legend> <p class="paragrafo">  <b><var></var>Exemplo página com entrada de dados e operações matemáticas! </b> </var>   </p> </legend>
+                
+              
+            </form>
+            <body style="background-image: url(dgr.jpg);"></body>
+            <input style=" border-radius: 10%; color: deeppink; background-color: black; font-size: 140%;" type="number" id="FormFarenheit" name="FormFarenheit" placeholder="Farenheit"><br><br>
+            <input style=" border-radius: 10%; color: deeppink; background-color: black; font-size: 140%;" type="number" name="FormCelsius" id="FormCelsius" placeholder="Celsius"> <br> <br>
+            <input style=" border-radius: 10%; color: deeppink; background-color: black; font-size: 140%;" type="number" name="FormKelvin" id="FormKelvin" placeholder="Kelvin"> <br> <br>
+            <input style="color: deeppink; background-color: black; font-size: 140%;" type="button"  id="btnconverter" onclick="Converter()" value="Converter"> 
+            <input style="color: deeppink; background-color: black; font-size: 140%;"  type="button" id="btnlimpar"  onclick="Limpar()" value="Limpar">
+
+        </fieldset>
         </form>
     </body>
 </html>
